@@ -1,9 +1,9 @@
 #pragma once
 
 template <typename T>
-void eulerStep(T f, T &x, double &t, double dt)
+void eulerStep(T (*f)(const T), T &x, double &t, double dt)
 {
-    x += x*(T)(f*dt);
+    x += f(x)*(T)(dt);
     t += dt;
     return;
 }

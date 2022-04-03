@@ -9,10 +9,10 @@ OBJECTS = testODE1.o
 .PHONY: default
 default: $(EXECUTABLES)
 
-$(EXECUTABLES): $(OBJECTS)
+$(EXECUTABLES): $(OBJECTS) 
 	$(CXX) $(LDFLAGS) $^ $(LDLIBS) -o $@
 
-$(OBJECTS): EulerStep.h
+$(OBJECTS): RK4Step.h
 
 .PHONY: clean
 clean:
