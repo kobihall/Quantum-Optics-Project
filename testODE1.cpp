@@ -25,7 +25,7 @@ int main()
     dataFile << real(x) << "+" << imag(x) << "i ," << t << "\n";
 
     while(t < 3.141592){
-        RK4Step<std::complex<double> >(eitODE, x, t, dt);
+        RK4Step(eitODE, x, t, dt);
         //x = x/std::norm(x);
         dataFile << real(x) << "+" << imag(x) << "i ," << t << "\n";
     }
